@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pi2-braillerecognition",
+  "private_key_id": "d5658d4f8624aeedafe8212d654b24422f13164c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCsSkekjlKqd9Hy\n1aViiN8wLKtWpdlAM/vhUcjXxb+bT7ofE8T2RlKmN57j0ySkkiPDM4HVDE2ouyOo\nf8wEKVqeaik8QGLHB2LwnFi/lIA1FN4OaFl8fTs/xrUnT9yiiN/xejZfNN4axdIu\nQfZ3YNsG0r9Ss8c5Ynixc+g3LtaGi6ecjTJuETC10MsV6ecwJUBf/mSbdzNBfA6M\nlA3Q41RAMCdfQtFVxRvNlXixRLn/lJPP2kuQtPhVofuWTcDSoH8LoxVlVxJOdoC8\nNsPyibn6bCZyL8WRFxRbPw3hBr9nlDskv9kzgPnuVokbpkP8KGFYMVhFMB8eX14X\nXFhx0DK/AgMBAAECggEAQa6FtoG9mRhZ1TpGtRRaBdsZrMxIUPYgcctEhqHwRIz1\n9zAJuBuiGZT9wXv2rbi64olp1yc8GfXSB8REqld7oQX2123yWk8CFJl+Kfc6k0Hz\nz8lPSCrT4iHmYOjMw7frq/r77HrSq6E72f+yrtshVO4WGzjHXCSiv3/hCNyV0y+b\nrOQJOXWmzpxbDkNaAlg1oR/ZpZwEgmuenbiPPJ+m5Crwp6CcVfooonvm+Qh1oVGL\nJGfVQ1BlLizid6c4e0OhgIujof3CRE3Km+4Gn9Y5X1cPEAZtsxr9YnA4pYPoQZEF\nJqjG5XVkuytqpdKgvVrYj5pG7HhY2RKO05mCQJlySQKBgQDzCyQbwnMvoPlqWz2u\nqCj3ZovRDuOIAYBGN1fh83y2KndHFN4oQZthiNhMHffuehat59o/6zRgIKA36eWn\nk223+eAneqgaRfYBmPq/a4KzoK948WipFSCwr8JR3XPeneCTaiV4MZCFcqiJVapX\n8MzTowC0P7d1LXcQzW/7KcZQWQKBgQC1eY4JJS5jUhzjLJ5F0uZCwv5YFberFN2U\nv9N4LDTpjRQbOhf6JaIR44Qc1SDcslVKzCftfW6tyk+au9iQ+xRWjWhpSA9BnzMX\naVqeLERNDLnkSMgTxkReitS+noYOnr8JYpPOKiiKpoSm3lJLBJq6caHgxPuvkS6N\nS84hAEF41wKBgFHV14OtVsGbzz+bl0pe/uRG2B89hyl9b+a0rde796sS43TAtwkR\nBjOyMzp2AMyAuXA3GErbdJhFhA0vqY9iWdhPv8UrTL0D/5CMJSodFjZLjaoIhzgf\nkBFOLP0JtwEnYb3hSNqOvd3hPJR5jtDrmNxOD2eh6LEA7Q1wTxtf9pGJAoGAHIVq\nKU3KqJlzKNEOXvLydXOn/bgMEbtJx+MOHUj1V+9wRYcv1YSsoBsd3Foyu/zbItJL\nRCv+hRnSwQLc2oxbee7nhgRpQWr/4KISN+HFKkbhwFsf9tumSyWOohbQAuQ4KgVw\nLWq6zG+3UXKHhHrIxpytUGIlHEa5BkPvtYgQwikCgYBt2Wq/jfdAu79gH/VHIPEx\nYKeQs4ir2X+f8UPG32naF/HHuS16XivHuCFcKHb0TfSTVGtE5gBErhM2cZNfRdL+\nG60aaEcipQXn+WXwv6MtH9TQnCq9LE4qnKBB+5okVuN7Ck4Rb9S0XCiQ7xJ7btoa\n5c5N3ali66BsBokq8XmjgQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "starting-account-d0qg89u8sh@pi2-braillerecognition.iam.gserviceaccount.com",
+  "client_id": "107415281990255049771",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/starting-account-d0qg89u8sh%40pi2-braillerecognition.iam.gserviceaccount.com"
+}
