@@ -39,7 +39,6 @@ def transcript(path):
         #audio_channel_count=1,
         #enable_separate_recognition_per_channel=True,
         model='command_and_search')
-    print('processando')
     response = client.recognize(config, audio)
 
     results = ""

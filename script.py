@@ -12,6 +12,7 @@ while True:
     if a.status_code == 404:
         print('Waiting for new request... (Sleeping for 10 seconds)')
     else:
+        start_time = time.time()
         if '.wav' in str(a.headers['content-disposition']):
             print('Audio saved!')
             open('tmp.wav', 'wb').write(a.content)
@@ -41,5 +42,7 @@ while True:
         file.write(text)
         file.close()
         os.system('python2 translator.py text.txt')
+        print("Elapsed time: {}".format(time.time() - start_time))
+
 
     time.sleep(10)

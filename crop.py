@@ -80,8 +80,8 @@ def find_border_components(contours, ary):
         x,y,w,h = cv2.boundingRect(c)
         if w * h > 0.5 * area:
             borders.append((i, x, y, x + w - 1, y + h - 1))
-    print(borders)
-    print(len(borders))
+    #print(borders)
+    #print(len(borders))
     return borders
 
 
@@ -246,7 +246,7 @@ def process_image(path, out_path):
     _   , contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
     borders = find_border_components(contours, edges)
-    print('oi', borders)
+    #print('oi', borders)
     #borders.sort(key=lambda i, x1, y1, x2, y2: (x2 - x1) * (y2 - y1))
     
     border_contour = None

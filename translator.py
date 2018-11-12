@@ -27,8 +27,10 @@ for line in content:
     for char_line in char_lines:
         result.append(''.join([str(e) for e in char_line]))
 
-print(result)
+for line in result:
+    numbers = []
+    for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
+        #os.system("./{0} {1}".format(sys.argv[2], num))
+        numbers.append(num)
 
-#for line in result:
-#    for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
-#        os.system("./{0} {1}".format(sys.argv[2], num))
+    print(numbers)

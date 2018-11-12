@@ -1,13 +1,18 @@
 #!/bin/python
+import locale
+
+locale.setlocale(locale.LC_ALL, 'C')
 from tesserocr import PyTessBaseAPI, RIL, iterate_level
 import sys
 import cv2
 import numpy as np
 from PIL import Image
 from crop import cropa
-
+locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 def processa(path):
+
+    locale.setlocale(locale.LC_ALL, 'C')
     with PyTessBaseAPI(lang='por') as api:
         c = cropa(path)
         if '.png' in path:
@@ -33,13 +38,18 @@ def processa(path):
             api.Recognize()
             print(api.GetUTF8Text())
         """
-        print(' '.join(word for word in api.AllWords()))
         api.Recognize()
         ri = api.GetIterator()
         level = RIL.TEXTLINE
+
+        #print(' '.join(word for word in api.AllWords()))
         for r in iterate_level(ri, level):
             symbol = r.GetUTF8Text(level)  # r == ri
             conf = r.Confidence(level)
-            print(symbol, end='')
+            #print(symbol, end='')
         #print(api.GetUTF8Text())
-        return api.GetUTF8Text()
+
+        text = api.GetUTF8Text()
+
+        locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+        return text
