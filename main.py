@@ -27,9 +27,10 @@ def user_text():
 
 
 def open_braille(filename):
-    file = open(filename)
-    content = file.read()
-    print(brailleToAlpha.translate(content))
+    #file = open(filename)
+    #content = file.read()
+    oi = brailleToAlpha.translate(filename)
+    print(f"Texto literal: {oi}")
 
 
 def open_text(filename):
@@ -51,10 +52,11 @@ def argument_handler():
         else:
             menu()
     elif len(argv) == 3:
-        print(argv[0], argv[1], argv[2])
         if argv[2] == "--braille" or argv[2] == "-b":
+            #print("Literal text: ", ' ')
             open_braille(argv[1])
         elif argv[2] == "--text" or argv[2] == "-t":
+            #print("Braille: ", ' ')
             open_text(argv[1])
         elif argv[2] == "--map" or argv[2] == "-m":
             printer.all_braille()

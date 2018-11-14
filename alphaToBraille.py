@@ -137,6 +137,7 @@ def translate(string):
     # Convert alphabetic text to braille.
     braille = ""
     words = extract_words(string)
+    
     for word in words:
         word = numbers_handler(word)
         word = capital_letters_handler(word)

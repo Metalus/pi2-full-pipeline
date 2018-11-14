@@ -27,6 +27,7 @@ letters = {'a': chr(10241),
            'y': chr(10301),
            'z': chr(10293)}
 
+"""
 contractions = {'but': chr(10243),
                 'can': chr(10249),
                 'do': chr(10265),
@@ -59,7 +60,8 @@ contractions = {'but': chr(10243),
                 'in': chr(10260),
                 'was': chr(10292),
                 'to': chr(10262)}
-
+"""
+contractions = {}
 punctuation = {',': chr(10242),
                ';': chr(10246),
                ':': chr(10258),
