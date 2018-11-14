@@ -21,7 +21,7 @@ while True:
         elif '.pdf' in str(a.headers['content-disposition']):
             print('PDF Saved!')
             open('tmp.pdf', 'wb').write(a.content)
-         elif '.txt' in str(a.headers['content-disposition']):
+        elif '.txt' in str(a.headers['content-disposition']):
             open('tmp.txt', 'wb').write(a.content)
             text = open('tmp.txt', 'rb').read().decode()
         else:
