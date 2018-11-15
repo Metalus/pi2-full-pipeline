@@ -34,9 +34,12 @@ for line in content:
     os.system('python3 main.py \'{}\' -t'.format(line))
     file = open('out', 'r')
     bra_line = file.read()
+    bra_line = bra_line.strip()
     print("Braille: {}".format(bra_line))
     os.system('python3 main.py \'{}\' -b'.format(bra_line))
     bra = brl.matrix(bra_line)
+    bri = [[[0,0], [0,0],[0,0]]] * (27 - len(bra))
+    bra = bra + bri
     char_lines = []
     for i in range(0, 3):
         temp = [item[i] for item in bra]
