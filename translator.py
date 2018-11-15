@@ -30,6 +30,7 @@ content = resultt
 
 for line in content:
     #print(line)
+    line = line.ljust(27)
     os.system('python3 main.py \'{}\' -t'.format(line))
     file = open('out', 'r')
     bra_line = file.read()
@@ -45,6 +46,9 @@ for line in content:
     for char_line in char_lines:
         result.append(''.join([str(e) for e in char_line]))
 
+for i, k in enumerate(result):
+    if len(k) != 54:
+        print(i, k)
 geral = [x for x in [r for r in result]]
 geral2 = []
 
@@ -66,8 +70,13 @@ for j in range(0, len(macumba[0])):
     for k in range(0, 3):
         resultado.append(macumba[k][j])
 """
+i = 0
 for line in result:
+    
+    if not i:
+        print('-------------------------------------------------------')
     print(line)
+    i = (i+1) % 3
 
 for line in result:
     numbers = []
