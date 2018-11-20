@@ -61,7 +61,9 @@ contractions = {chr(10243): 'but',
                 chr(10262): 'to'}
                 """
 contractions = {}
-punctuation = {chr(10242): ',',
+punctuation = {
+               chr(10244): '.',
+               chr(10242): ',',
                chr(10246): ';',
                chr(10258): ':',
                chr(10290): '.',

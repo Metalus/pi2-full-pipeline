@@ -1,7 +1,7 @@
 # Translate alphabet based text to braille.
 import mapAlphaToBraille, mapBrailleToAlpha
 
-CAPITAL = chr(10272)  # ⠠
+CAPITAL = chr(10280) #chr(10272)  # ⠠
 NUMBER = chr(10300)  # ⠼
 UNRECOGNIZED = '?'
 
