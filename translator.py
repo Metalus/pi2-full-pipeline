@@ -11,9 +11,10 @@ curr = content
 resultt = []
 
 ss = [' ', '.', ',']
+jj = [' ']
 while len(curr) != 0:
     if len(curr) >= 27:
-        if curr[26] not in ss and curr[27] not in ss:  
+        if curr[26] not in ss:  
             lstring = curr[:(curr[:27].rfind(' '))]
             resultt.append(lstring.strip().ljust(27))
             curr = curr[curr[:27].rfind(' '):].strip()
@@ -75,26 +76,36 @@ for j in range(0, len(macumba[0])):
         resultado.append(macumba[k][j])
 """
 i = 0
+import time
 for line in result:
     
     if not i:
         print('-------------------------------------------------------')
-    print(line)
+    print(line.ljust(56, '0'))
     i = (i+1) % 3
 
+linhacont = 0
 for line in result:
     numbers = []
+    #line = line.center(54, '0')
+    line = line.ljust(56, '0')
     for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
-        c = os.system("./{0} {1}".format('a.out', num))
-        
-        retorno = bin(c)[2:].rjust(8, '0')
-        codigo = retorno[:len(retorno)-8] if len(retorno) > 8 else '00000000'
-        codigoreal = int(codigo, 2)
-        if codigoreal == 0:
-            numbers.append(num)
-        else:
-            print(codigoreal)
-            sys.exit()
-            break
-    print('impressao completa')
+        numbers.append(num) 
+
+    c = os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]))
+    if not linhacont:
+        print('-----------------------------')
+    linhacont = (linhacont + 1) % 3
     print(numbers)
+    time.sleep(7)
+    """    
+    retorno = bin(c)[2:].rjust(8, '0')
+    codigo = retorno[:len(retorno)-8] if len(retorno) > 8 else '00000000'
+    codigoreal = int(codigo, 2)
+    if codigoreal == 0:
+        pass
+    else:
+        print(codigoreal)
+        sys.exit()
+        break
+    """

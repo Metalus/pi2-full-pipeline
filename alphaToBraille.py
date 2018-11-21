@@ -3,7 +3,7 @@ import mapAlphaToBraille, mapBrailleToAlpha
 
 CAPITAL = chr(10280) #chr(10272)  # ⠠
 NUMBER = chr(10300)  # ⠼
-UNRECOGNIZED = '?'
+UNRECOGNIZED = '' #'?'
 
 # There is no braille symbol for a generic quote (").
 # There is only open quotation (“) and closed quotation (”).

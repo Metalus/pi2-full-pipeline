@@ -18,13 +18,13 @@ def processa(path='imagem.jpg'):
     locale.setlocale(locale.LC_ALL, 'C')
     with PyTessBaseAPI(lang='por') as api:
         start_time = time.time()
-        c = cropa(path)
+        #c = cropa(path)
         if '.png' in path:
-            api.SetImageFile('tmp.png')
+            api.SetImageFile('imagem.png')
         elif '.jpeg' in path:
-            api.SetImageFile('tmp.jpeg')
+            api.SetImageFile('imagem.jpeg')
         else:
-            api.SetImageFile('tmp.jpg')
+            api.SetImageFile('imagem.jpg')
 
         api.SetVariable("save_blob_choices", "T")
         
@@ -45,19 +45,22 @@ def processa(path='imagem.jpg'):
         api.Recognize()
         ri = api.GetIterator()
         level = RIL.TEXTLINE
-
+        lines = []
         #print(' '.join(word for word in api.AllWords()))
         for r in iterate_level(ri, level):
             symbol = r.GetUTF8Text(level)  # r == ri
             conf = r.Confidence(level)
             #print(symbol, end='')
+            if symbol.strip():
+                lines.append(symbol.strip())
         #print(api.GetUTF8Text())
-
-        text = api.GetUTF8Text()
-
+        #print(lines)
+        text = '\n'.join(lines)
+        #print(text)
+        #text = api.GetUTF8Text()
         locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
         if text != None:
-            text = unidecode.unidecode(text)
+            #text = unidecode.unidecode(text)
             file = open('textscanner.txt', 'w')
             file.write(text)
             file.close()

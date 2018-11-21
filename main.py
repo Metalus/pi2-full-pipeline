@@ -30,7 +30,7 @@ def open_braille(filename):
     #file = open(filename)
     #content = file.read()
     oi = brailleToAlpha.translate(filename)
-    print(f"Texto literal: {oi}")
+    #print("Texto literal: {}".format(oi))
 
 
 def open_text(filename):
