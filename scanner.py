@@ -56,7 +56,7 @@ def processa(path='imagem.jpg'):
         #print(api.GetUTF8Text())
         #print(lines)
         text = '\n'.join(lines)
-        #print(text)
+        print(text)
         #text = api.GetUTF8Text()
         locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
         if text != None:
