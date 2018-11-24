@@ -92,16 +92,18 @@ for line in result:
     for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
         numbers.append(num) 
 
-    c = os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]))
+    #c = os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a_old.out', numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]))
     if not linhacont:
         print('-----------------------------')
     linhacont = (linhacont + 1) % 3
     print(numbers)
-    time.sleep(7)
-    """    
-    retorno = bin(c)[2:].rjust(8, '0')
-    codigo = retorno[:len(retorno)-8] if len(retorno) > 8 else '00000000'
-    codigoreal = int(codigo, 2)
+    #time.sleep(9)    
+    #retorno = bin(c)[2:].rjust(8, '0')
+    #codigo = retorno[:len(retorno)-8] if len(retorno) > 8 else '00000000'
+    #codigoreal = int(codigo, 2)
+    #print('retorno', codigoreal)
+    #break
+    """
     if codigoreal == 0:
         pass
     else:

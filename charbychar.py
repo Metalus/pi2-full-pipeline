@@ -8,19 +8,23 @@ import cv2
 import numpy as np
 from PIL import Image
 from crop import cropa
+import unidecode
+import os
+import time
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 def processa(path):
-
+    print("webapp")
     locale.setlocale(locale.LC_ALL, 'C')
     with PyTessBaseAPI(lang='por') as api:
-        c = cropa(path)
+        start_time = time.time()
+        #c = cropa(path)
         if '.png' in path:
-            api.SetImageFile('tmp.png')
+            api.SetImageFile('imagem.png')
         elif '.jpeg' in path:
-            api.SetImageFile('tmp.jpeg')
+            api.SetImageFile('imagem.jpeg')
         else:
-            api.SetImageFile('tmp.jpg')
+            api.SetImageFile('imagem.jpg')
 
         api.SetVariable("save_blob_choices", "T")
         
@@ -41,15 +45,26 @@ def processa(path):
         api.Recognize()
         ri = api.GetIterator()
         level = RIL.TEXTLINE
-
+        lines = []
         #print(' '.join(word for word in api.AllWords()))
         for r in iterate_level(ri, level):
             symbol = r.GetUTF8Text(level)  # r == ri
             conf = r.Confidence(level)
             #print(symbol, end='')
+            if symbol.strip():
+                lines.append(symbol.strip())
         #print(api.GetUTF8Text())
-
-        text = api.GetUTF8Text()
-
+        #print(lines)
+        text = '\n'.join(lines)
+        print(text)
+        #text = api.GetUTF8Text()
         locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
-        return text
+        if text != None:
+            #text = unidecode.unidecode(text)
+            file = open('textscanner.txt', 'w')
+            file.write(text)
+            file.close()
+            os.system('python2 translator.py textscanner.txt')
+            print("Elapsed time: {}".format(time.time() - start_time))
+
+

@@ -7,7 +7,10 @@ from google.cloud import speech
 
 
 def listen_from_file(path):
-    audio_file = AudioSegment.from_wav(path)
+    ext = str(path).split('.')[-1]
+    print(ext)
+    print(path)
+    audio_file = AudioSegment.from_file(path, ext)
     audio_file = audio_file.set_channels(1)
     audio_file.export('audio_file.wav', format='wav')
     return audio_file

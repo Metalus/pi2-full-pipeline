@@ -18,13 +18,15 @@ def processa(path='imagem.jpg'):
     locale.setlocale(locale.LC_ALL, 'C')
     with PyTessBaseAPI(lang='por') as api:
         start_time = time.time()
-        #c = cropa(path)
+        print('pre')
+        c = cropa(path)
+        print('pro')
         if '.png' in path:
-            api.SetImageFile('imagem.png')
+            api.SetImageFile('tmp.png')
         elif '.jpeg' in path:
-            api.SetImageFile('imagem.jpeg')
+            api.SetImageFile('tmp.jpeg')
         else:
-            api.SetImageFile('imagem.jpg')
+            api.SetImageFile('tmp.jpg')
 
         api.SetVariable("save_blob_choices", "T")
         
