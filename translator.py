@@ -28,7 +28,7 @@ while len(curr) != 0:
 #print(content)
 #print(resultt)
 content = resultt
-
+content = content[:22]
 for line in content:
     #print(line)
     line = line.ljust(27)
@@ -85,7 +85,7 @@ for line in result:
     i = (i+1) % 3
 
 linhacont = 0
-for line in result[:22]:
+for line in result:
     numbers = []
     #line = line.center(54, '0')
     line = line.ljust(56, '0')
