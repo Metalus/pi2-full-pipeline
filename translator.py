@@ -85,7 +85,7 @@ for line in result:
     i = (i+1) % 3
 
 linhacont = 0
-for line in result:
+for line in result[:22]:
     numbers = []
     #line = line.center(54, '0')
     line = line.ljust(56, '0')

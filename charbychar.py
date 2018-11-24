@@ -20,11 +20,11 @@ def processa(path):
         start_time = time.time()
         #c = cropa(path)
         if '.png' in path:
-            api.SetImageFile('imagem.png')
+            api.SetImageFile(path)
         elif '.jpeg' in path:
-            api.SetImageFile('imagem.jpeg')
+            api.SetImageFile(path)
         else:
-            api.SetImageFile('imagem.jpg')
+            api.SetImageFile(path)
 
         api.SetVariable("save_blob_choices", "T")
         
