@@ -21,12 +21,15 @@ def processa(path='imagem.jpg'):
         print('pre')
         c = cropa(path)
         print('pro')
-        if '.png' in path:
-            api.SetImageFile('tmp.png')
-        elif '.jpeg' in path:
-            api.SetImageFile('tmp.jpeg')
-        else:
-            api.SetImageFile('tmp.jpg')
+        try:
+            if '.png' in path:
+                api.SetImageFile('tmp.png')
+            elif '.jpeg' in path:
+                api.SetImageFile('tmp.jpeg')
+            else:
+                api.SetImageFile('tmp.jpg')
+        except RuntimeError:
+            api.SetImageFile(path)
 
         api.SetVariable("save_blob_choices", "T")
         

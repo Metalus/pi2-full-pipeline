@@ -18,7 +18,7 @@ os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', *[0,0,0,0,0,0,1]))
 start_time = time.time()
 os.system("raspistill -o imagem.jpg -cfx 128:128")
 im = Image.open('imagem.jpg')
-im = im.rotate(-90, expand=1)
+im = im.rotate(90, expand=1)
 im.save('imagem.jpg')
 print("Photo taken")
 

@@ -90,7 +90,9 @@ linhacont = 0
 for line in result:
     numbers = []
     #line = line.center(54, '0')
-    line = line.ljust(56, '0')
+    line = line.ljust(56, '0')[:55]
+    line += '0'
+    
     for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
         numbers.append(num) 
 

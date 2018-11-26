@@ -10,6 +10,7 @@ while True:
     if os.path.exists('imagem.jpg'):
         print("Processing captured image...")
         text = scanner.processa('imagem.jpg')
+        os.system('rm -rf imagem.jpg')
     else:
         a = requests.get('https://brailleprinter.herokuapp.com/webapp/downloadfile', allow_redirects=True)
 
