@@ -34,6 +34,13 @@ content = content[:22]
 for line in content:
     #print(line)
     line = line.ljust(27)
+    lista = line.split()
+    for c, pal in enumerate(lista):
+        if pal.isupper() and len(pal)>4:
+            lista[c] = pal.lower()
+            lista[c] = lista[c].replace(lista[c][0], lista[c][0].upper(), 1)
+
+    line = ' '.join(lista).ljust(27)
     os.system('python3 main.py \'{}\' -t'.format(line))
     file = open('out', 'r')
     bra_line = file.read()
@@ -115,4 +122,3 @@ for line in result:
         break
     elif codigoreal == 1:
         print("enviando proxima linha")
-
