@@ -13,7 +13,7 @@ gpio.setup(4, gpio.IN)
 ##while True:
 print("Waiting for button")
 gpio.wait_for_edge(4, gpio.RISING)
-os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', *[0,0,0,0,0,0,1])
+os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', *[0,0,0,0,0,0,1]))
 #cam.capture("imagem.jpg")
 start_time = time.time()
 os.system("raspistill -o imagem.jpg -cfx 128:128")

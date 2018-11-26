@@ -25,11 +25,11 @@ int fd;
 //	delay(10); 
 //}
 
-bool finish = false;
+//bool finish = false;
 
 void Interrupt()
 {
-	printf("Interrompido\n");
+	//printf("Interrompido\n");
 	pthread_mutex_unlock(&mutex1);
 }
 
@@ -49,13 +49,15 @@ int main(int argc, char *argv[])
 		wiringPiI2CWrite(fd, atoi(argv[i]));
 		delay(10); // Esperar o I2C do MSP
 	}
-
+	if(atoi(argv[7]) & 0x1)
+		return 0;
 	pthread_mutex_lock(&mutex1);
 	wiringPiISR(PinInterrupt, INT_EDGE_RISING, Interrupt);	
 	pthread_mutex_lock(&mutex1);
 	int retorno = wiringPiI2CRead(fd);
-	delay(10);
+//	pthread_mutex_unlock(&mutex1);
 	printf("%d\n",retorno);
+	delay(70);
 	return retorno;
 
 }
