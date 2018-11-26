@@ -12,8 +12,12 @@ while True:
         text = scanner.processa('imagem.jpg')
         os.system('rm -rf imagem.jpg')
     else:
-        a = requests.get('https://brailleprinter.herokuapp.com/webapp/downloadfile', allow_redirects=True)
-
+        try:
+            a = requests.get('https://brailleprinter.herokuapp.com/webapp/downloadfile', allow_redirects=True)
+        except requests.exceptions.ConnectionError:
+            print('Trying to reconnect...')
+            time.sleep(10)
+            continue
         text = None
         if a.status_code == 404:
             print('Waiting for new request... (Sleeping for 10 seconds)')
@@ -62,5 +66,5 @@ while True:
         os.system('python2 translator.py text.txt')
         print("Elapsed time: {}".format(time.time() - start_time))
 
-    os.system('rm -rf tmp.* arquivo.* audio_file.*')
+    os.system('rm -rf imagem.* tmp.* arquivo.* audio_file.*')
     time.sleep(10)
