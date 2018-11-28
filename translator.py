@@ -94,16 +94,19 @@ for line in result:
     i = (i+1) % 3
 
 linhacont = 0
+
+reinicia = False
 for line in result:
     numbers = []
     #line = line.center(54, '0')
     line = line.ljust(56, '0')[:55]
     line += '0'
     
+    print("eae: ", line)
     for num in (lambda s: map(lambda x: int(x, 2), (lambda ss: [ss[x:x+8] for x in range(0, len(ss)//8 + (len(ss) - len(ss)//8), 8)])(s)))(line):
         numbers.append(num) 
-
     c = os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]))
+    print("oi")
     if not linhacont:
         print('-----------------------------')
     linhacont = (linhacont + 1) % 3
@@ -118,7 +121,7 @@ for line in result:
     #break
     if codigoreal == 8:
         print("finaliza impressao")
-        sys.exit()
+        reinicia = True
         break
     elif codigoreal == 1:
         print("enviando proxima linha")

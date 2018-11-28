@@ -13,6 +13,11 @@ gpio.setup(4, gpio.IN)
 while True:
     print("Waiting for button")
     gpio.wait_for_edge(4, gpio.RISING)
+
+    if os.path.exists("lock"):
+        continue
+
+    os.system("touch lock")
     os.system("./{0} {1} {2} {3} {4} {5} {6} {7}".format('a.out', *[0,0,0,0,0,0,1]))
     #cam.capture("imagem.jpg")
     start_time = time.time()
@@ -23,3 +28,4 @@ while True:
     print("Photo taken")
 
     print(time.time() - start_time)
+    time.sleep(0.6)

@@ -9,6 +9,7 @@ import unidecode
 while True:
     if os.path.exists('imagem.jpg'):
         print("Processing captured image...")
+        start_time = time.time()
         text = scanner.processa('imagem.jpg')
         os.system('rm -rf imagem.jpg')
     else:
@@ -22,6 +23,9 @@ while True:
         if a.status_code == 404:
             print('Waiting for new request... (Sleeping for 10 seconds)')
         else:
+            os.system('touch lock')
+            os.system('./{} {} {} {} {} {} {} {}'.format('a.out', *[0,0,0,0,0,0,1]))
+            time.sleep(5)
             start_time = time.time()
             try:
 
@@ -66,5 +70,6 @@ while True:
         os.system('python2 translator.py text.txt')
         print("Elapsed time: {}".format(time.time() - start_time))
 
-    os.system('rm -rf imagem.* tmp.* arquivo.* audio_file.*')
+    os.system('rm -rf imagem.* tmp.* arquivo.* audio_file.* lock')
+    print("Files removed!")
     time.sleep(10)
