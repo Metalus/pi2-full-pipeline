@@ -6,13 +6,13 @@ import cv2
 from PIL import Image
 
 gpio.setmode(gpio.BCM)
-gpio.setup(4, gpio.IN)
+gpio.setup(23, gpio.IN,pull_up_down=gpio.PUD_UP)
 #cam = camera.PiCamera()
 #cam.resolution = (1920,1080)
 #cam.color_effects = (128, 128)
 while True:
     print("Waiting for button")
-    gpio.wait_for_edge(4, gpio.RISING)
+    gpio.wait_for_edge(23, gpio.RISING)
 
     if os.path.exists("lock"):
         continue

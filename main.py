@@ -2,7 +2,6 @@
 import printer, alphaToBraille, brailleToAlpha
 from sys import argv
 
-
 def menu():
     print('''
     Usage:

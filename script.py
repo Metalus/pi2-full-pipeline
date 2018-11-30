@@ -63,11 +63,12 @@ while True:
     
     
     if text != None:
-        text = unidecode.unidecode(text)
+        #text = unidecode.unidecode(text)
         file = open('text.txt', 'w')
         file.write(text)
         file.close()
         os.system('python2 translator.py text.txt')
+        #os.system('./a.out 0 0 0 0 0 0 2')
         print("Elapsed time: {}".format(time.time() - start_time))
 
     os.system('rm -rf imagem.* tmp.* arquivo.* audio_file.* lock')

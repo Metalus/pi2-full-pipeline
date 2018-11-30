@@ -94,9 +94,10 @@ for line in result:
     i = (i+1) % 3
 
 linhacont = 0
-
+codigoreal = 0
 reinicia = False
-for line in result:
+for i, line in enumerate(result):
+    print("Line: " + str(i))
     numbers = []
     #line = line.center(54, '0')
     line = line.ljust(56, '0')[:55]
@@ -125,3 +126,8 @@ for line in result:
         break
     elif codigoreal == 1:
         print("enviando proxima linha")
+
+print(len(result))
+
+if codigoreal != 8 and len(result) <= 63:
+    os.system('./a.out 0 0 0 0 0 0 2')
